@@ -11,8 +11,15 @@ int main()
 		sp.addNumber(17);
 		sp.addNumber(9);
 		sp.addNumber(11);
-		std::cout << sp.shortestSpan() << std::endl;
-		std::cout << sp.longestSpan() << std::endl;
+		std::cout << "Shortest span (copy): " << sp.shortestSpan() << std::endl;
+		std::cout << "Longest span (copy): " << sp.longestSpan() << std::endl;
+
+
+		std::cout << "=======copy Test=========" << std::endl;
+
+		Span spanCopy(sp);
+		std::cout << "Shortest span (copy): " << spanCopy.shortestSpan() << std::endl;
+		std::cout << "Longest span (copy): " << spanCopy.longestSpan() << std::endl;
 
 		std::cout << "=======Crazy Test =========" << std::endl;
 		Span sp2 = Span(10001);
@@ -20,14 +27,14 @@ int main()
 		{
 			sp2.addNumber(i);
 		}
-		std::cout << sp2.shortestSpan() << std::endl;
-		std::cout << sp2.longestSpan() << std::endl;
+		std::cout << "Shortest span (copy): " << sp2.shortestSpan() << std::endl;
+		std::cout << "Longest span (copy): " << sp2.longestSpan() << std::endl;
 
 		std::cout << "=======Error Test =========" << std::endl;
 		Span sp3 = Span(1);
 		sp3.addNumber(1);
-		std::cout << sp3.shortestSpan() << std::endl;
-		std::cout << sp3.longestSpan() << std::endl;
+		std::cout << "Shortest span (copy): " << sp3.shortestSpan() << std::endl;
+		std::cout << "Longest span (copy): " << sp3.longestSpan() << std::endl;
 	}
 	catch(const std::exception& e)
 	{

@@ -2,6 +2,7 @@
 
 void Span::addNumber(int num)
 {
+	//配列がすでに最大サイズに達している場合
 	if (_SpanSize == this->MaxArraySize)
 		throw std::runtime_error("ERROR");
 	this->_array[_SpanSize] = num;
@@ -31,11 +32,24 @@ int Span::longestSpan()
 	return(max - min);
 }
 
+
+//========constructor==========
 Span::Span(unsigned int N)
 {
+	std::cout << "default constructor" << std::endl;
 	this->MaxArraySize = N;
 	this->_SpanSize = 0;
-	this->_array = new int [this->MaxArraySize];
+	this->_array = new int [N];
+}
+
+Span::Span(const Span &src)
+{
+	std::cout << "coppy constructor" << std::endl;
+	this->MaxArraySize = src.MaxArraySize;
+	this->_SpanSize = src._SpanSize;
+	this->_array = new int[src.MaxArraySize];
+
+	std::copy(src._array, src._array +src._SpanSize, _array);
 }
 
 Span::~Span()

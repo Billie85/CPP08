@@ -15,6 +15,7 @@ public:
 	int shortestSpan();
 	int longestSpan();
 	Span(unsigned int N);
+	Span(const Span &src);
 	~Span();
 	void addNumber(int num);
 };

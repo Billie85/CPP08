@@ -9,15 +9,15 @@ class Span
 {
 private:
 	unsigned int MaxArraySize;
-	int *_array;
+	size_t *_array;
 	unsigned int _SpanSize;
 public:
-	int shortestSpan();
-	int longestSpan();
+	size_t shortestSpan();
+	size_t longestSpan();
 	Span(unsigned int N);
 	Span(const Span &src);
 	~Span();
-	void addNumber(int num);
+	void addNumber(size_t num);
 };
 
 #endif
